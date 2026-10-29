@@ -62,10 +62,10 @@ I'm a mobile developer who enjoys taking an idea all the way to the store — fr
 ## 📌 Featured projects
 
 <p align="center">
+  <a href="https://re-os.com"><img src="https://raw.githubusercontent.com/ArdaKaanOzturk/ArdaKaanOzturk/output/repo-reos.svg" width="49%" alt="Reos — real estate CRM app (private)" /></a>
+  <img src="https://raw.githubusercontent.com/ArdaKaanOzturk/ArdaKaanOzturk/output/repo-karbai.svg" width="49%" alt="KarbAI — AI calorie and macro tracker (private)" />
   <a href="https://github.com/ArdaKaanOzturk/derwise_app"><img src="https://raw.githubusercontent.com/ArdaKaanOzturk/ArdaKaanOzturk/output/repo-derwise_app.svg" width="49%" alt="derwise_app" /></a>
   <a href="https://github.com/ArdaKaanOzturk/react-native-jobs-search-app"><img src="https://raw.githubusercontent.com/ArdaKaanOzturk/ArdaKaanOzturk/output/repo-react-native-jobs-search-app.svg" width="49%" alt="react-native-jobs-search-app" /></a>
-  <a href="https://github.com/ArdaKaanOzturk/flutter_finance_app_ui"><img src="https://raw.githubusercontent.com/ArdaKaanOzturk/ArdaKaanOzturk/output/repo-flutter_finance_app_ui.svg" width="49%" alt="flutter_finance_app_ui" /></a>
-  <a href="https://github.com/ArdaKaanOzturk/notes-app-with-react-native"><img src="https://raw.githubusercontent.com/ArdaKaanOzturk/ArdaKaanOzturk/output/repo-notes-app-with-react-native.svg" width="49%" alt="notes-app-with-react-native" /></a>
 </p>
 
 <div align="center">

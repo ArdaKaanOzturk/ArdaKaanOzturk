@@ -1,16 +1,21 @@
 // Builds the self-hosted stats card and repo cards into dist/.
 // Runs daily from .github/workflows/profile.yml; needs GITHUB_TOKEN (or GH_TOKEN).
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const LOGIN = process.env.PROFILE_LOGIN || 'ArdaKaanOzturk';
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const OUT = process.argv[2] || 'dist';
 
+// Public repos: data comes from the API, the text here is a fallback description.
 const FEATURED = {
   derwise_app: 'Study-partner app with video calls — Flutter + Firebase.',
   'react-native-jobs-search-app': 'Job search app built with React Native and Expo Router.',
-  flutter_finance_app_ui: 'Personal finance app UI with charts and smooth animations.',
-  'notes-app-with-react-native': 'Notes app with React Native — create, edit and organise notes.',
+};
+
+// Private repos: GITHUB_TOKEN cannot read them, so their cards use static data.
+const PRIVATE_FEATURED = {
+  reos: { name: 'Reos', lang: 'TypeScript', desc: 'Real estate CRM app for agents, brokers and offices — iOS and Android.', cta: 're-os.com →', icon: 'assets/icons/reos.png' },
+  karbai: { name: 'KarbAI', lang: 'TypeScript', desc: 'AI calorie and macro tracker — snap a meal, get calories and macros.', cta: 'Coming soon', icon: 'assets/icons/karbai.png' },
 };
 
 const LANG_COLORS = { Dart: '#00B4AB', JavaScript: '#f1e05a', TypeScript: '#3178c6', Swift: '#F05138', 'C++': '#f34b7d', Kotlin: '#A97BFF' };
@@ -169,28 +174,24 @@ ${bars}
 `;
 }
 
-async function repoCards() {
-  const res = await fetch(`https://api.github.com/users/${LOGIN}/repos?per_page=100`, {
-    headers: { Authorization: `bearer ${TOKEN}`, 'User-Agent': LOGIN },
-  });
-  const repos = await res.json();
-  const cards = {};
-  for (const [name, fallback] of Object.entries(FEATURED)) {
-    const r = repos.find((x) => x.name === name);
-    if (!r) continue;
-    const lang = r.language || 'Dart';
-    const desc = r.description || fallback;
-    const words = desc.split(' ');
-    const lines = [''];
-    for (const w of words) {
-      if ((lines[lines.length - 1] + ' ' + w).trim().length > 62) lines.push(w);
-      else lines[lines.length - 1] = (lines[lines.length - 1] + ' ' + w).trim();
-    }
-    const color = LANG_COLORS[lang] || '#94a3b8';
-    cards[name] = `<svg xmlns="http://www.w3.org/2000/svg" width="580" height="150" viewBox="0 0 580 150" role="img" aria-label="${esc(r.name)}: ${esc(desc)}">
-  <title>${esc(r.name)}</title>
+const REPO_ICON = 'M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z';
+const LOCK_ICON = 'M4 4a4 4 0 0 1 8 0v2h.25c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-5.5C2 6.784 2.784 6 3.75 6H4Zm8.25 3.5h-8.5a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25ZM10.5 6V4a2.5 2.5 0 1 0-5 0v2Z';
+const STAR_ICON = 'M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z';
+
+function repoCard({ name, desc, lang, stars = 0, isPrivate = false, cta, icon }) {
+  const lines = [''];
+  for (const w of desc.split(' ')) {
+    if ((lines[lines.length - 1] + ' ' + w).trim().length > 62) lines.push(w);
+    else lines[lines.length - 1] = (lines[lines.length - 1] + ' ' + w).trim();
+  }
+  const color = LANG_COLORS[lang] || '#94a3b8';
+  const metaX = 60 + lang.length * 7.5;
+  const nameW = name.length * 10.5;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="580" height="150" viewBox="0 0 580 150" role="img" aria-label="${esc(name)}: ${esc(desc)}">
+  <title>${esc(name)}</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#121b36"/></linearGradient>
+    <clipPath id="ic"><rect x="24" y="22" width="24" height="24" rx="6"/></clipPath>
   </defs>
   <style>
     .in { opacity: 0; animation: rise .8s cubic-bezier(.2,.8,.2,1) forwards .1s; }
@@ -200,17 +201,34 @@ async function repoCards() {
   <rect x="0.5" y="0.5" width="579" height="149" rx="16" fill="url(#bg)" stroke="#ffffff" stroke-opacity="0.09"/>
   <rect x="0" y="22" width="4" height="34" rx="2" fill="${color}"/>
   <g class="in">
-    <path transform="translate(26,26) scale(1.1)" fill="#94a3b8" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
-    <text x="52" y="42" font-family="${SANS}" font-size="18" font-weight="700" fill="#f8fafc">${esc(r.name)}</text>
-${lines.slice(0, 2).map((l, i) => `    <text x="26" y="${76 + i * 21}" font-family="${SANS}" font-size="14" fill="#cbd5e1">${esc(l)}</text>`).join('\n')}
+${icon
+    ? `    <image href="data:image/png;base64,${readFileSync(icon).toString('base64')}" x="24" y="22" width="24" height="24" clip-path="url(#ic)"/>`
+    : `    <path transform="translate(26,26) scale(1.1)" fill="#94a3b8" d="${isPrivate ? LOCK_ICON : REPO_ICON}"/>`}
+    <text x="58" y="42" font-family="${SANS}" font-size="18" font-weight="700" fill="#f8fafc">${esc(name)}</text>
+${isPrivate ? `    <rect x="${68 + nameW}" y="27" width="58" height="20" rx="10" fill="none" stroke="#94a3b8" stroke-opacity="0.45"/>
+    <text x="${97 + nameW}" y="41" text-anchor="middle" font-family="${SANS}" font-size="11" font-weight="600" fill="#94a3b8">Private</text>
+` : ''}${lines.slice(0, 2).map((l, i) => `    <text x="26" y="${76 + i * 21}" font-family="${SANS}" font-size="14" fill="#cbd5e1">${esc(l)}</text>`).join('\n')}
     <circle cx="32" cy="124" r="6" fill="${color}"/>
     <text x="44" y="129" font-family="${SANS}" font-size="13" fill="#94a3b8">${esc(lang)}</text>
-    <path transform="translate(${60 + lang.length * 7.5},117) scale(.9)" fill="#94a3b8" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
-    <text x="${80 + lang.length * 7.5}" y="129" font-family="${SANS}" font-size="13" fill="#94a3b8">${r.stargazers_count}</text>
-    <text x="554" y="129" text-anchor="end" font-family="${SANS}" font-size="13" font-weight="600" fill="#67e8f9">View repository →</text>
+    <path transform="translate(${metaX},117) scale(.9)" fill="#94a3b8" d="${isPrivate ? LOCK_ICON : STAR_ICON}"/>
+    <text x="${metaX + 20}" y="129" font-family="${SANS}" font-size="13" fill="#94a3b8">${isPrivate ? 'Private repository' : stars}</text>
+    <text x="554" y="129" text-anchor="end" font-family="${SANS}" font-size="13" font-weight="600" fill="#67e8f9">${esc(cta)}</text>
   </g>
 </svg>
 `;
+}
+
+async function repoCards() {
+  const res = await fetch(`https://api.github.com/users/${LOGIN}/repos?per_page=100`, {
+    headers: { Authorization: `bearer ${TOKEN}`, 'User-Agent': LOGIN },
+  });
+  const repos = await res.json();
+  const cards = {};
+  for (const [slug, p] of Object.entries(PRIVATE_FEATURED)) cards[slug] = repoCard({ ...p, isPrivate: true });
+  for (const [name, fallback] of Object.entries(FEATURED)) {
+    const r = repos.find((x) => x.name === name);
+    if (!r) continue;
+    cards[name] = repoCard({ name: r.name, lang: r.language || 'Dart', desc: r.description || fallback, stars: r.stargazers_count, cta: 'View repository →' });
   }
   return cards;
 }
