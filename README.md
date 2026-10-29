@@ -42,7 +42,7 @@ I'm a mobile developer who enjoys taking an idea all the way to the store — fr
 
 <p align="center">
   <a href="https://re-os.com"><img src="./assets/card-reos.svg" width="49%" alt="Reos — real estate CRM, React Native and TypeScript" /></a>
-  <a href="https://github.com/ArdaKaanOzturk/derwise_app"><img src="./assets/card-derwise.svg" width="49%" alt="Derwise — study partner app, Flutter and Firebase" /></a>
+  <img src="./assets/card-karbai.svg" width="49%" alt="KarbAI — AI calorie and macro tracker, Expo and TypeScript" />
 </p>
 
 ## 📊 GitHub activity
