@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="140" viewBox="0 0 1200 140" role="img" aria-label="Thanks for visiting">
+  <title>Thanks for visiting</title>
+  <defs>
+    <linearGradient id="w" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#67e8f9"/><stop offset="0.5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+    <clipPath id="c"><rect width="1200" height="140" rx="22"/></clipPath>
+  </defs>
+  <style>
+    .w1 { animation: slide 14s linear infinite; }
+    .w2 { animation: slide 9s linear infinite reverse; }
+    .w3 { animation: slide 20s linear infinite; }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-600px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g clip-path="url(#c)">
+    <path class="w3" d="M0 72 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 q75 -10 150 0 t150 0 V140 H0 Z" fill="url(#w)" opacity="0.18"/>
+    <path class="w2" d="M0 86 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 q50 -14 100 0 t100 0 V140 H0 Z" fill="url(#w)" opacity="0.28"/>
+    <path class="w1" d="M0 100 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 q75 -12 150 0 t150 0 V140 H0 Z" fill="url(#w)" opacity="0.55"/>
+  </g>
+  <text x="600" y="44" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#94a3b8" letter-spacing="1">Thanks for stopping by — let's build something great.</text>
+</svg>
