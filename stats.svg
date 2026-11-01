@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-label="802 total contributions, 0-day current streak, 5-day longest streak">
+  <title>GitHub activity of ArdaKaanOzturk</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#121b36"/></linearGradient>
+    <linearGradient id="barg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="50"/></filter>
+    <clipPath id="c"><rect width="1200" height="330" rx="20"/></clipPath>
+  </defs>
+  <style>
+    .tile { opacity: 0; animation: rise .8s cubic-bezier(.2,.8,.2,1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .bar { transform-box: fill-box; transform-origin: bottom; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes grow { from { transform: scaleY(0); } }
+    .val { opacity: 0; animation: fade .5s ease forwards; }
+    @keyframes fade { to { opacity: 1; } }
+    .live { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
+    @keyframes pulse { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .tile, .val { opacity: 1; } }
+  </style>
+  <g clip-path="url(#c)">
+    <rect width="1200" height="330" fill="url(#bg)"/>
+    <circle cx="1080" cy="20" r="140" fill="#7c3aed" opacity="0.28" filter="url(#blur)"/>
+    <circle cx="80" cy="330" r="120" fill="#0891b2" opacity="0.25" filter="url(#blur)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="329" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+  <text x="32" y="50" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f8fafc">Contribution activity</text>
+  <circle cx="1032" cy="44" r="4" fill="#22c55e"/><circle class="live" cx="1032" cy="44" r="4" fill="#22c55e"/>
+  <text x="1168" y="49" text-anchor="end" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Updated Nov 1, 2026</text>
+  <text x="640" y="94" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Last 12 months</text>
+  <line x1="640" y1="270.5" x2="1168" y2="270.5" stroke="#ffffff" stroke-opacity="0.08"/>
+  <g transform="translate(32,82)"><g class="tile" style="animation-delay:0.1s">
+    <rect width="178" height="112" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="18" width="22" height="4" rx="2" fill="#67e8f9"/>
+    <text x="16" y="44" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Total contributions</text>
+    <text x="16" y="80" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">802</text>
+    <text x="16" y="99" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#67e8f9" fill-opacity="0.85">all time</text>
+  </g></g>
+  <g transform="translate(224,82)"><g class="tile" style="animation-delay:0.18s">
+    <rect width="178" height="112" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="18" width="22" height="4" rx="2" fill="#a78bfa"/>
+    <text x="16" y="44" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Contributions in 2026</text>
+    <text x="16" y="80" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">574</text>
+    <text x="16" y="99" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#a78bfa" fill-opacity="0.85">so far this year</text>
+  </g></g>
+  <g transform="translate(416,82)"><g class="tile" style="animation-delay:0.26s">
+    <rect width="178" height="112" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="18" width="22" height="4" rx="2" fill="#f472b6"/>
+    <text x="16" y="44" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Current streak</text>
+    <text x="16" y="80" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">0d</text>
+    <text x="16" y="99" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#f472b6" fill-opacity="0.85">starts today</text>
+  </g></g>
+  <g transform="translate(32,208)"><g class="tile" style="animation-delay:0.33999999999999997s">
+    <rect width="178" height="112" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="18" width="22" height="4" rx="2" fill="#fb923c"/>
+    <text x="16" y="44" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Longest streak</text>
+    <text x="16" y="80" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">5d</text>
+    <text x="16" y="99" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#fb923c" fill-opacity="0.85">consecutive days</text>
+  </g></g>
+  <g transform="translate(224,208)"><g class="tile" style="animation-delay:0.42000000000000004s">
+    <rect width="178" height="112" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="18" width="22" height="4" rx="2" fill="#a3e635"/>
+    <text x="16" y="44" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Best day</text>
+    <text x="16" y="80" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">55</text>
+    <text x="16" y="99" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#a3e635" fill-opacity="0.85">Oct 30, 2026</text>
+  </g></g>
+  <g transform="translate(416,208)"><g class="tile" style="animation-delay:0.5s">
+    <rect width="178" height="112" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="18" width="22" height="4" rx="2" fill="#38bdf8"/>
+    <text x="16" y="44" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">Most active on</text>
+    <text x="16" y="80" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">Tue</text>
+    <text x="16" y="99" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#38bdf8" fill-opacity="0.85">223 active days</text>
+  </g></g>
+  <g>
+    <rect class="bar" style="animation-delay:0.2s" x="649.7" y="254.0" width="24.6" height="16.0" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:0.7s" x="662.0" y="246.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">23</text>
+    <text x="662.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Dec</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.25s" x="693.7" y="249.8" width="24.6" height="20.2" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:0.75s" x="706.0" y="241.8" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">29</text>
+    <text x="706.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Jan</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.30000000000000004s" x="737.7" y="263.0" width="24.6" height="7.0" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:0.7999999999999999s" x="750.0" y="255.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">10</text>
+    <text x="750.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Feb</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.35000000000000003s" x="781.7" y="267.0" width="24.6" height="3.0" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:0.85s" x="794.0" y="259.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">4</text>
+    <text x="794.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Mar</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.4s" x="825.7" y="267.0" width="24.6" height="3.0" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:0.8999999999999999s" x="838.0" y="259.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">3</text>
+    <text x="838.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Apr</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.45s" x="869.7" y="267.0" width="24.6" height="3.0" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:0.95s" x="882.0" y="259.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">4</text>
+    <text x="882.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">May</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.5s" x="913.7" y="258.8" width="24.6" height="11.2" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:1s" x="926.0" y="250.8" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">16</text>
+    <text x="926.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Jun</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.55s" x="957.7" y="249.1" width="24.6" height="20.9" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:1.05s" x="970.0" y="241.1" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">30</text>
+    <text x="970.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Jul</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.6000000000000001s" x="1001.7" y="194.7" width="24.6" height="75.3" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:1.1s" x="1014.0" y="186.7" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">108</text>
+    <text x="1014.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Aug</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.65s" x="1045.7" y="161.9" width="24.6" height="108.1" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:1.15s" x="1058.0" y="153.9" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">155</text>
+    <text x="1058.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Sep</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.7s" x="1089.7" y="120.0" width="24.6" height="150.0" rx="5" fill="url(#barg)"/>
+    <text class="val" style="animation-delay:1.2s" x="1102.0" y="112.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">215</text>
+    <text x="1102.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Oct</text>
+  </g>
+  <g>
+    <rect class="bar" style="animation-delay:0.75s" x="1133.7" y="267.0" width="24.6" height="3.0" rx="5" fill="url(#barg)" opacity="0.65"/>
+    <text class="val" style="animation-delay:1.25s" x="1146.0" y="259.0" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#cbd5e1">0</text>
+    <text x="1146.0" y="292" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Nov</text>
+  </g>
+</svg>
